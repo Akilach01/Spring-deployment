@@ -3,9 +3,11 @@ package org.example.spring_deployement.service;
 import org.example.spring_deployement.entity.Customer;
 import org.example.spring_deployement.repo.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerService {
     @Autowired
     private CustomerRepo customerRepo;
