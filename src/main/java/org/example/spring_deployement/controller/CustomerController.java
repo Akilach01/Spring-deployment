@@ -13,15 +13,23 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-     CustomerService customerService;
-
-    @PostMapping
-    public Customer save(@RequestBody Customer customer) {
-
-    }
+    private CustomerService customerService;
 
     @GetMapping
     public List<Customer> findAll() {
-  return
+        return customerService.findAll();
+    }
+    @PostMapping
+    public Customer save(@RequestBody Customer customer) {
+        return customerService.save(customer);
+    }
+    @PutMapping
+    public Customer update(@RequestBody Customer customer) {
+        return customerService.update(customer);
+    }
+
+    @DeleteMapping
+    public void delete(@RequestBody Customer customer) {
+        customerService.delete(customer);
     }
 }
